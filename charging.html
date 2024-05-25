@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charging Station Owner Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 80%;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .content-left {
+      flex: 1;
+    }
+
+    .content-right {
+      flex: 1;
+      text-align: right;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .available {
+      background-color: #6bff85;
+    }
+
+    .unavailable {
+      background-color: #ff6b6b;
+    }
+
+    button {
+      padding: 6px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .logout-btn {
+      margin-top: 10px;
+      padding: 4px 8px;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>My Charging Station Dashboard</h1>
+  <div class="content">
+    <div class="content-left">
+      <table id="station-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Bookings</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Slot 1</td>
+            <td class="available">Available</td>
+            <td>2</td>
+            <td>
+              <button>+</button>
+              <button>-</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Slot 2</td>
+            <td class="unavailable">Unavailable</td>
+            <td>0</td>
+            <td>
+              <button>+</button>
+              <button>-</button>
+            </td>
+          </tr>
+               <!-- Add more slots as needed -->
+    </tbody>
+</table>
+<h2>Bookings</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>User</th>
+      <th>Duration</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>12:00 PM</td>
+      <td>Harshal</td>
+      <td>2 hours</td>
+      <td>Confirmed</td>
+    </tr>
+    <tr>
+      <td>01:30 PM</td>
+      <td>Vinodh</td>
+      <td>1 hour</td>
+      <td>Pending</td>
+    </tr>
+    <tr>
+      <td>03:00 PM</td>
+      <td>Mohan</td>
+      <td>3 hours</td>
+      <td>Confirmed</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="content-right">
+<img src="EV_veh.jpg" alt="Your Image">
+<h2>Analytics</h2>
+<p>Peak Hours: 12:00 PM - 3:00 PM</p>
+<p>Average Booking Duration: 2 hours</p>
+<p>Total Revenue (This Month):Rs.15,55,500.00</p>
+</div>

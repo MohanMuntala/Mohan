@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-image: url('BG1.jpg'); /* Background image URL */
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Booking Management</h1>
+  <div class="options">
+    <button onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>User</th>
+        <th>Slot ID</th>
+        <th>Status</th>
+        <th>ID</th> <!-- New column for ID -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12:00 PM</td>
+        <td>Harshal</td>
+        <td>Slot A</td> <!-- Slot ID -->
+        <td>Confirmed</td>
+        <td>1</td> <!-- ID -->
+      </tr>
+      <tr>
+        <td>01:30 PM</td>
+        <td>Vinodh</td>
+        <td>Slot B</td> <!-- Slot ID -->
+        <td>Pending</td>
+        <td>2</td> <!-- ID -->
+      </tr>
+      <tr>
+        <td>03:00 PM</td>
+        <td>Mohan</td>
+        <td>Slot C</td> <!-- Slot ID -->
+        <td>Confirmed</td>
+        <td>3</td> <!-- ID -->
+      </tr>
+      <!-- Add more booking details as needed -->
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

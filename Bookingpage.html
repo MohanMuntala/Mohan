@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charging Station Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-image: url('IMG6.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .booking-info {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .booking-info h2 {
+            margin-top: 0;
+        }
+
+        .booking-info p {
+            margin: 5px 0;
+        }
+
+        .booking-form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .booking-form input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .booking-form select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Charging Station Booking</h1>
+
+    <div class="booking-info">
+        <h2>Experience the future of charging!</h2>
+        <p>Select your preferred date and time below.</p>
+    </div>
+
+    <div class="booking-form">
+        <form>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <label for="time">Time:</label>
+            <select id="time" name="time" required disabled>
+                <option value="">Select a date first</option>
+            </select><br>
+        </form>
+    </div>
+</div>
+
+<script>
+    const dateInput = document.getElementById('date');
+    const timeSelect = document.getElementById('time');
+
+    dateInput.addEventListener('input', () => {
+        const selectedDate = new Date(dateInput.value);
+        timeSelect.innerHTML = ''; // Clear existing options
+
+        // Generate time slots for the selected date
+        const availableTimeSlots = generateTimeSlots(selectedDate);
+
+        // Add options to the select element
+        availableTimeSlots.forEach(slot => {
+            const option = document.createElement('option');
+            option.value = slot;
+            option.textContent = slot;
+            timeSelect.appendChild(option);
+        });
+
+        // Enable the select element
+        timeSelect.disabled = false;
+    });
+
+    // Function to generate time slots for a given date
+    function generateTimeSlots(date) {
+        // Dummy implementation generating time slots at 30-minute intervals
+        const availableSlots = [];
+        const startHour = 8; // Starting hour (e.g., 8:00 AM)
+        const endHour = 20; // Ending hour (e.g., 8:00 PM)
+
+        for (let hour = startHour; hour <= endHour; hour++) {
+            availableSlots.push(`${pad(hour)}:00 AM`);
+            availableSlots.push(`${pad(hour)}:30 AM`);
+        }
+
+        return availableSlots;
+    }
+
+    // Function to pad single-digit numbers with leading zeros
+    function pad(num) {
+        return num < 10 ? `0${num}` : `${num}`;
+    }
+</script>
+
+</body>
+</html>
